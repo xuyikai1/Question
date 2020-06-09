@@ -1,4 +1,4 @@
-# Spring事件传播机制
+# Spring事件传播无法异步
 
 > 参考链接：
 > [Spring事件监听机制 - 知乎](https://zhuanlan.zhihu.com/p/101128672)
@@ -23,7 +23,7 @@ Spring事件传播中，监听器在接收到事件发布，则执行事件对�
 
 在监听器的listen方法打断点，调用测试接口。
 发现：
-- 原来应该直接返回成功的请求卡在了异步执行的listen方法断点（同步）
+- 原来应该直接返回成功的请求卡在了异步执行的listen方法断点（等于是两者关系是同步执行）
 - 打印出来的处理请求和处理listen方法的两者线程名称不一样
 
 打断点在ApplicationEventMulticaster类的multicastEvent()方法，查看问题，发现executor为null
