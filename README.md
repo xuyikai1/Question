@@ -1,4 +1,4 @@
-# Spring事件传播无法异步
+# Spring事件传播无法异步(已解决)
 
 > 参考链接：
 > [Spring事件监听机制 - 知乎](https://zhuanlan.zhihu.com/p/101128672)
