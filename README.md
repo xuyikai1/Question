@@ -4,6 +4,7 @@
 > [Spring事件监听机制 - 知乎](https://zhuanlan.zhihu.com/p/101128672)
 > [深入浅出Spring/SpringBoot 事件监听机制 - 知乎](https://zhuanlan.zhihu.com/p/145927110)
 > [Spring事件发布监听](https://blog.csdn.net/fenglllle/article/details/88370998)
+> [spring 事件及异步方法使用](http://zhengw-tech.com/2019/11/30/practical-spring-function/)
 
 ## 0.代码
 
@@ -27,3 +28,7 @@ Spring事件传播中，监听器在接收到事件发布，则执行事件对�
 - 打印出来的处理请求和处理listen方法的两者线程名称不一样
 
 打断点在ApplicationEventMulticaster类的multicastEvent()方法，查看问题，发现executor为null
+
+## 4.问题解释
+
+**在监听器的方法中使线程休眠，过程中不打断点，接口可正常返回，说明异步执行是生效的**
