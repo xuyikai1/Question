@@ -29,6 +29,6 @@ Spring事件传播中，监听器在接收到事件发布，则执行事件对�
 
 打断点在ApplicationEventMulticaster类的multicastEvent()方法，查看问题，发现executor为null
 
-## 4.问题解释
+## 4.问题解决解释
 
 **在监听器的方法中使线程休眠，过程中不打断点，接口可正常返回，说明异步执行是生效的**
